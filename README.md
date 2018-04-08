@@ -1,4 +1,4 @@
 # eighties-gifloop
-Party dashboard with music and retro gifs
+Retro gifs timed to the tune of "Burning down the house"
 
-![](http://i.imgur.com/AjBcNLq.png)
+![gif](http://g.recordit.co/AFBlteQqjm.gif)
