@@ -1,89 +1,95 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Page Title</title>
+	<title>80s gifs</title>
 </head>
 <style>
 	@import url(https://fonts.googleapis.com/css?family=Advent+Pro:100);
-	body { 
-	  background: purple no-repeat center center fixed; 
-	  background-size: cover;
-	}
-	h1{
-	  font-family: 'Advent Pro', sans-serif;
-	  font-size: 3em;
-	  margin: .2em .5em;
-	  color: rgba(0,0,0, 0.3);
-	  color: purple;
-	}
 	body {
-	    height: 100%;
+		background: black no-repeat center center fixed;
+		background-size: cover;
 	}
 
+	h1 {
+		font-family: 'Advent Pro', sans-serif;
+		font-size: 3em;
+		margin: .2em .5em;
+		color: rgba(0, 0, 0, 0.3);
+		color: purple;
+	}
+
+	body {
+		height: 100%;
+	}
 </style>
+
 <body>
 
-<audio loop="true" autoplay="true">
-  <source src="talkingheads.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+	<audio loop="true" autoplay="true">
+		<source src="talkingheads.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+	</audio>
 
 </body>
 
 <script>
 	var gifs = [
-	  'gifs/car.gif', 
-	  'gifs/glasses.gif',
-	  'gifs/runner.gif',
-	  'gifs/kungfudance.gif', //watch out!
-	  'gifs/band.gif', //cool babies
-	  'gifs/elevator.gif', //ordinary guy
-	  'gifs/sun.gif', //chorus 1
-	  'gifs/rollercoaster.gif', //hold tight
-	  'gifs/falling.gif', //nasty weather
-	  'gifs/hoff.gif', //chorus 2
-	  'gifs/neonrun.gif', //fill
-	  'gifs/pacman.gif', //overboard
-  	  'gifs/sphinx.gif', //close enough
-	  'gifs/denver2.gif', //fire
-	  'gifs/lips.gif', //all wet
-	  'gifs/bikegenerator.gif', //shake down
-	  'gifs/casette.gif', //365 degrees
-	  'gifs/computer.gif', //chorus 3
-	  'gifs/lasereyes.gif', //first place
-	  'gifs/greendance.gif', //it was once
-	  'gifs/surf.gif', //way to work
-	  'gifs/balls.gif', //burst into place
-	  'gifs/break.gif', //breakdown
-  	  'gifs/trongirl.gif',
-  	  'gifs/russel.gif',  //chorus 4
-	  'gifs/silhouette.gif', //my house
-	  'gifs/play.gif', 
-	  'gifs/guitar.gif',
-	  'gifs/soul.gif', //chorus 5
-	  'gifs/daftdrummer.gif', //drums
-	  'gifs/aerodynamic.gif', 
-	   'gifs/landscape.gif', 
-	   'gifs/computer.gif',
-	   'gifs/city.gif',
-	   'gifs/screenbath.gif',
-	   'gifs/heman.gif',
-	   'gifs/cars.gif',
-	   'gifs/sungrid.gif'
+		'gifs/car.gif',
+		'gifs/glasses.gif',
+		'gifs/runner.gif',
+		'gifs/kungfudance.gif', //watch out!
+		'gifs/band.gif', //cool babies
+		'gifs/elevator.gif', //ordinary guy
+		'gifs/sun.gif', //chorus 1
+		'gifs/rollercoaster.gif', //hold tight
+		'gifs/falling.gif', //nasty weather
+		'gifs/hoff.gif', //chorus 2
+		'gifs/neonrun.gif', //fill
+		'gifs/pacman.gif', //overboard
+		'gifs/sphinx.gif', //close enough
+		'gifs/denver2.gif', //fire
+		'gifs/lips.gif', //all wet
+		'gifs/bikegenerator.gif', //shake down
+		'gifs/casette.gif', //365 degrees
+		'gifs/computer.gif', //chorus 3
+		'gifs/lasereyes.gif', //first place
+		'gifs/greendance.gif', //it was once
+		'gifs/surf.gif', //way to work
+		'gifs/balls.gif', //burst into place
+		'gifs/break.gif', //breakdown
+		'gifs/trongirl.gif',
+		'gifs/russel.gif', //chorus 4
+		'gifs/silhouette.gif', //my house
+		'gifs/play.gif',
+		'gifs/guitar.gif',
+		'gifs/soul.gif', //chorus 5
+		'gifs/daftdrummer.gif', //drums
+		'gifs/aerodynamic.gif',
+		'gifs/landscape.gif',
+		'gifs/computer.gif',
+		'gifs/city.gif',
+		'gifs/screenbath.gif',
+		'gifs/heman.gif',
+		'gifs/cars.gif',
+		'gifs/sungrid.gif'
 	];
 	var gifCounter = 0;
-
-	//onready
-	//function() {
-	  setTimeout(function(){ changeBackground(); });
-	//})();
+	setTimeout(function () {
+		changeBackground();
+	});
 
 	function changeBackground() {
-	  console.log("change bg");
-	  document.body.style.backgroundImage = `url(${gifs[gifCounter]})`;
-	  gifCounter = (gifCounter < gifs.length-1) ? gifCounter+1 : 0;
-	  setTimeout(function(){ changeBackground(); }, 5000);
+		console.log("change bg");
+		document.body.style.backgroundImage = `url(${gifs[gifCounter]})`;
+		gifCounter = (gifCounter < gifs.length - 1) ? gifCounter + 1 : 0;
+		setTimeout(function () {
+			changeBackground();
+		}, 5000);
 	}
+
+	//inject images into body to preload them
+	var gifNodes = gifs.map(x => `<img src='${x}'>`);
+	document.body.innerHTML+= `<div style="visibility: hidden; height: 0;">${gifNodes}</div>;
 </script>
 
 </html>
